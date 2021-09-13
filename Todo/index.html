@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>TODO</title>
+  </head>
+  <body>
+    <form onsubmit="return">
+    <div class="container">
+      <div class="form-group">
+        <h1 class="head">My To Do List</h1>
+
+        <label for="title">Task:</label><br />
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          placeholder="Add a task..." autoComplete="on" required
+        /><br /><br />
+      </div>
+
+      <div class="form-group">
+        <label for="user">Who should do it:</label><br />
+        <input
+          type="text"
+          class="form-control"
+          id="user"
+          placeholder="Add a user..." autoComplete="on" required
+        /><br /><br />
+      </div>
+
+      <div class="form-group">
+        <label for="date">Due Date:</label><br />
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          placeholder="dd/mm/yyyy" 
+          autoComplete="on" required
+        /><br />
+      </div>
+    </form>
+
+<!-- buttons -->
+      
+      <div class="form-group">
+        <button
+          style="float: left; margin-top: 20px"
+          id="submit"
+          class="submit"
+        >
+          Add Task
+        </button>
+
+        <!-- <div style="float: none; margin-left: 20px;  margin-top: 20px">
+          <select class="form-control" id="sort">
+            <button class="form-control" type="button" data-toggle="dropdown">
+              Sort Task <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-content">
+              <li><a class="byuser">By User</a></li>
+              <li><a class="bydate">By Date</a></li>
+            </ul>
+          </select>
+        </div> -->
+        <div class="dropdown" style="float: none;     margin-left: 0px; margin-top: 18px ;">
+            <button style="background-color: rgb(34, 148, 43); width:25vh;">Sort &darr;</button>
+            <div class="dropdown-content">
+              <a id="byuser" onclick="sortByUser()">By user</a>
+              <a id="bydate" onclick="sortByDate()">By date</a>
+            </div>
+        </div>
+       
+        <input
+          style="float: right;position:relative; margin-top:22px"
+          type="text"
+          class="form-control"
+          id="search"
+          placeholder="Search..."
+        />
+      </div>
+   
+    </div>
+
+
+    <!-- output -->
+
+    <div class="list-group" id="todoList" style="margin-top:55px;">
+      </div> 
+
+    <script src="script.js"></script>
+
+  </body>
+</html>

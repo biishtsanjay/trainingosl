@@ -1,0 +1,21 @@
+.step{
+  display: none;
+}
+.step.active{
+  display: block;
+}
+
+.form-group{
+  width: 100%;
+}
+.control-label{
+  padding:5px;
+  margin:5px;
+  width: 10%;
+}
+.form-control{
+  width: 50%;
+  padding: 5px;
+  margin: 5px;
+  font-size:1.1rem;
+}

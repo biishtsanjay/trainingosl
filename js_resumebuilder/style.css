@@ -1,0 +1,28 @@
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+} 
+
+.form-group{
+  margin-top: 10px;
+}
+input{
+  margin-left: 140px;
+  width: 250px;
+}
+label{
+  width: 150px;
+}
+
+.myimg {
+  border-radius: 50%;
+  width: 200px;
+}
+.background {
+  background-color: aquamarine;
+}
+#cv-template{
+  display: none;
+}

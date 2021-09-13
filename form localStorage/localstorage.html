@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        fieldset{
+            border:2px solid gray;
+            border-radius: 5px;
+            width:50%;
+            margin:auto;
+            padding:20px;
+            }
+        button{
+                width:30%;
+                border-radius: 5px;
+                border: 3px solid gray;
+                padding: 5px 5px 5px 5px;
+            }
+    </style>
+</head>
+<form  class="form" id="submitid">
+    <fieldset>
+      <legend>Form</legend>
+      <table>
+        
+        
+        <tr>
+          <td>
+            Name
+            <input type="text" name="username"  id="username" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Email
+            <input type="text" name="email" id="email" />
+          </td>
+        </tr>
+       
+        <tr>
+          <td>
+            PhoneNo.
+            <input type="number" name="phone" id="phone" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <button type="submit" value="save" id="save" >SAVE</button>
+          </td>
+        </tr>   
+       <!-- <tr>
+          <td>
+            <button onclick="myFunction()">
+                Get values
+            </button>
+          </td>
+       </tr> -->
+      </table>
+    </fieldset>
+  </form>
+
+
+      <!-- script -->
+<script>
+  
+    submitid.addEventListener('submit', function(event){
+        event.preventDefault();
+        
+    var username = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    // var button = document.getElementById('.submit').value; 
+   
+    
+    localStorage.setItem("username", username);
+    localStorage.setItem("email", email);
+    localStorage.setItem("phone", phone);
+
+    console.log(localStorage.getItem(''))
+
+});
+
+
+
+window.onload = function(){
+if(localStorage.getItem("username")){
+    document.getElementById("username").value = localStorage.getItem("username");
+}else{
+    document.getElementById("username").placeholder = "err please input your name";
+}
+
+if(localStorage.getItem("email")){
+    document.getElementById("email").value = localStorage.getItem("email");
+}else{
+    document.getElementById("email").placeholder = "err please input your emailId";
+}
+
+if(localStorage.getItem("phone")){
+    document.getElementById("phone").value = localStorage.getItem("phone");
+}else{
+    document.getElementById("phone").placeholder = "err please input your phone no.";
+}
+
+}
+
+
+
+</script>
+
+</body>
+</html>

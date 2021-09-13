@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+  </head>
+  <body>
+    <form method="GET" onsubmit="parseQueryString()">
+      <fieldset>
+        <legend>Form</legend>
+        <table>
+          <tr>
+            <td>
+              Name
+              <input type="text" name="name" id="name"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Email
+              <input type="text" name="email" id="email" />
+            </td>
+          </tr>
+         
+          <tr>
+            <td>
+              PhoneNo.
+              <input type="number" name="phone" id="phone" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="submit" value="Submit" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+
+<!-- script -->
+     <script>
+     var getUrl = window.location.search.slice(1);
+      getUrl = getUrl.replace(/=/g, '":"');
+      getUrl = getUrl.replace(/&/g, '","');
+      getUrl = getUrl.replace(/%40/g, "@");
+      getUrl = '{"' + getUrl + '"}';
+
+      var obj = JSON.parse(getUrl);
+      console.log(obj);
+
+      if (obj.name) {
+        document.getElementById("name").value = obj.name;
+      } else {
+        document.getElementById("name").placeholder =
+          "please input your name";
+      }
+
+      if (obj.email) {
+        document.getElementById("email").value = obj.email;
+      } else {
+        document.getElementById("email").placeholder =
+          "please input your email";
+      }
+
+     
+
+      if (obj.phone) {
+        document.getElementById("phone").value = obj.phone;
+      } else {
+        document.getElementById("phone").placeholder =
+          "please input your phone no.";
+      }
+    
+
+
+     
+      </script>
+  </body>
+</html>
+
